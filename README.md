@@ -2,6 +2,9 @@
 
 2019 WWDC 上，SwiftUI 横空出世。苹果终于受不了自己 UIKit 的繁琐，Frame 面对复杂布局无力的表达。AutoLayout 拿又臭又长的裹脚布，推出了声明式 UI 框架：[SwiftUI](https://developer.apple.com/documentation/swiftui)。先说感受，简洁所以很清晰。但也有遗憾，背后实现不透明，有些效果实现很复杂。总之，学习 SwiftUI 的小技巧就是，忘记 UIKit，从零开始。
 
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9kxrtsysj30dd0lz41m.jpg)
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1ge9kzq1827j30dd0lz0wt.jpg)
+
 ```swift
 struct DemoView: View {
     var body: some View {
@@ -70,9 +73,38 @@ SwiftUI 有提供默认动画。
 
 我认为 SwiftUI 布局还是相对复杂的。我更喜欢 flexbox 那样的概念。但是 SwiftUI 相似，但又很不相同。感觉内部自动实现了很多清空，导致开发者不能 100% 定制。
 
-- frame
-- padding
-- overlay
+### 布局原理
+
+1. 父视图提供一个 size 给子视图。
+2. 子视图根据这个 size，计算具体的新 size。
+3. 父视图根据这个新 size，根据自己的坐标系调整子视图 position。
+4. SwiftUI 渲染可能和有误差
+
+对于一些 ViewModifier，实际上是多包了一个层 View。
+
+
+```Swift
+Text("SwiftUI Layout").background(Color.red.opacity(0.4))
+```
+比如上面代码，我使用了 background，实际上有两个 View，一个是 Text，另一个是 Backgound。
+
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1gean77iqwcj302j01o747.jpg)
+
+然后是 frame。UIKit 中的 frame 就是 x,y,w,h。但是在 Swift 里，有如此之多的设置：
+```swift
+.frame(
+    minWidth: 20,
+    idealWidth: 80,
+    maxWidth: 80,
+    minHeight: 40,
+    idealHeight: 80,
+    maxHeight: 160,
+    alignment: .center)
+.fixedSize()
+```
+分别是最小、最理想、最大和对齐方式。就是在给定的空间里，会优先满足最大，如果不能满足则最小。但是如果标记了 fixedSize，则会按理想的尺寸去布局。
+
+- ViewModify: frame、padding、overlay
 - Stack
 - Spaceer & Divider
 - GeometryReader
@@ -105,3 +137,7 @@ SwiftUI 数据相关的概念有这些，理解起来十分清晰。
 ## 展望未来
 
 期望 2020 的 WWDC 上，SwiftUI 更好。
+
+## 引用
+
+[Layout](https://www.hackingwithswift.com/books/ios-swiftui/how-layout-works-in-swiftui)

@@ -8,6 +8,15 @@
 
 import SwiftUI
 
+struct LayoutDemoView: View {
+    var body: some View {
+        Text("SwiftUI Layout")
+            .background(Color.red.opacity(0.4))
+            .padding()
+            .background(Color.red.opacity(0.2))
+    }
+}
+
 struct ImageView: View {
     
     @State
@@ -28,44 +37,64 @@ struct ImageView: View {
     var modes = ["stretch", "tile"]
     
     var body: some View {
-        Image("test")
-            .resizable()
-            .scaledToFit()
+        VStack {
+            Text("A single line of text, too long to fit in a box.")
+            .background(Color.blue.opacity(0.2))
+            .fixedSize()
             .frame(width: 200, height: 200)
-            .clipShape(Circle())
-            .background(Color.blue)
-//        VStack {
-//            image?
-//                .resizable(capInsets: .init(), resizingMode: mode == 0 ? .stretch : .tile)
-//                .frame(width: w, height: h, alignment: .center)
-//                .background(Color.blue)
-//            Form {
-//                Section.init(header: Text("图片")) {
-//                    Slider.init(value: $w, in: 40...200,
-//                                minimumValueLabel: Text("40"),
-//                                maximumValueLabel: Text("200")) {
-//                        EmptyView()
-//                    }
-//                    Slider.init(value: $h,
-//                                in: 40...200,
-//                                minimumValueLabel: Text("40"),
-//                                maximumValueLabel: Text("200")) {
-//                        EmptyView()
-//                    }
-//                    Picker.init(selection: $mode, label: Text("Resizable")) {
-//                        ForEach(0..<modes.count) {
-//                            Text(self.modes[$0])
-//                        }
-//                    }.pickerStyle(SegmentedPickerStyle())
-//                }
+            .border(Color.gray)
+            
+            Text("A single line of text, too long to fit in a box.")
+            .background(Color.blue.opacity(0.2))
+            .frame(width: 200, height: 200)
+            .border(Color.gray)
+            
+            Text("A single line of text, too long to fit in a box.")
+                .background(Color.blue.opacity(0.4))
+                .frame(minWidth: 20,
+                       idealWidth: 150,
+                       maxWidth: 300,
+                       minHeight: 40,
+                       idealHeight: 80,
+                       maxHeight: 160,
+                       alignment: .center)
+                .fixedSize(horizontal: true, vertical: false)
+                .background(Color.blue.opacity(0.2))
+                
+                
+        }
+
+//        ScrollView {
+//            HStack {
+//                Spacer().background(Color.red)
 //            }
+//            Image("test").border(Color.gray)
+//
+//            HStack {
+//                    Image("test")
+//                      .resizable()
+//                      .border(Color.gray)
+//                      .frame(width: 200, height: 200)
+//                      .border(Color.yellow)
+//            }
+//
+//
+//
+//            Image("test")
+//                .resizable()
+//                .scaledToFill()
+//                .border(Color.gray)
+//                .frame(width: 200, height: 200)
+//                .border(Color.yellow)
+//
+//
+//            Image("test")
+//                .resizable()
+//                .scaledToFit()
+//                .border(Color.gray)
+//                .frame(width: 200, height: 200)
+//                .border(Color.yellow)
 //        }
-//        .sheet(isPresented: $showPicker, onDismiss: loadImg) {
-//            MyImagePicker.init(selectImg: self.$selectImg)
-//        }
-//        .navigationBarItems(trailing: Button.init("选择照片", action: {
-//            self.showPicker.toggle()
-//        }))
     }
     
     func loadImg() {
