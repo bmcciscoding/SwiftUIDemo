@@ -83,7 +83,7 @@ struct UIView: View {
                     Text("Padding").push(to: Text("Link"))
                     Text("Spacer")
                 }
-            }.navigationBarTitle("SwiftUI Example", displayMode: .inline)
+            }.navigationBarTitle("SwiftUI", displayMode: .inline)
         }
     }
 }
