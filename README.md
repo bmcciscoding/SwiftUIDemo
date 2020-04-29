@@ -102,9 +102,9 @@ Text("SwiftUI Layout").background(Color.red.opacity(0.4))
     alignment: .center)
 .fixedSize()
 ```
-分别是最小、最理想、最大和对齐方式。就是在给定的空间里，会优先满足最大，如果不能满足则最小。但是如果标记了 fixedSize，则会按理想的尺寸去布局。
+分别是最小、最理想、最大和对齐方式。就是在给定的空间里，会优先满足最大，如果不能满足则最小。但是如果标记了 fixedSize，则会按理想的尺寸去布局。对齐方式则是控制 frame 内容的 origin。
 
-- ViewModify: frame、padding、overlay
+- ViewModify: frame、fixedSize、offset、padding、overlay
 - Stack
 - Spaceer & Divider
 - GeometryReader
