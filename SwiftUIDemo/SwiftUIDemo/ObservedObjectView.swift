@@ -19,24 +19,35 @@ struct ObservedObjectView: View {
     @ObservedObject 
     var model: OOVModel
     
+@Environment(\.colorScheme)
+var colorMode
+
+var text: String {
+    switch colorMode {
+        case .light: return "light"
+        case .dark: return "dark"
+        @unknown default: return "unknow"
+    }
+}
+
     var body: some View {
-        VStack {
-            Text("修改 value 值，外面的 0 并不会变化")
-            HStack {
-                 Button.init("+") { 
-                     self.model.value += 1
-                 }
-                 Text(self.model.value.description)
-                 Button.init("-") { 
-                     self.model.value -= 1
-                 }
-            }
-        }
+        Text(text)
+            .foregroundColor(Color("Lanse"))
+            .background(Color.gray)
+    }
+    
+    func viewDidAppear() {
+        // Do something you want
+    }
+    
+    func viewDidDisappear() {
+        // Do something you want
     }
 }
 
 struct ObservedObjectView_Previews: PreviewProvider {
-    static var previews: some View {
-        ObservedObjectView(model: OOVModel.init())
-    }
+static var previews: some View {
+    ObservedObjectView(model: OOVModel.init())
+        .environment(\.colorScheme, .dark)
+}
 }

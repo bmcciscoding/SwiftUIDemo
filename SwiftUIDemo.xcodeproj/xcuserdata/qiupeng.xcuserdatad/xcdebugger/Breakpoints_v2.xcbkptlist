@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "669EF2EC-4FE0-4A48-908B-709AAB5ABC62"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CC7E458D-D598-445B-A0CD-121EBD2AFC46"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SwiftUIDemo/SwiftUIDemo/StateView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "StateView"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "CC7E458D-D598-445B-A0CD-121EBD2AFC46 - 98e9399c068d3b37"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftUIDemo.StateView.init(data: SwiftUIDemo.MyData, text: Swift.String, sUserInfo: SwiftUIDemo.UserInfo, oUserInfo: SwiftUIDemo.UserInfo, userInfo: SwiftUIDemo.UserInfo, showName: Swift.Bool) -&gt; SwiftUIDemo.StateView"
+                  moduleName = "SwiftUIDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiupeng/QP/iOS/SwiftUIDemo/SwiftUIDemo/SwiftUIDemo/StateView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "141">
+               </Location>
+               <Location
+                  uuid = "CC7E458D-D598-445B-A0CD-121EBD2AFC46 - d980746461d8c102"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SwiftUIDemo.StateView.init() -&gt; SwiftUIDemo.StateView"
+                  moduleName = "SwiftUIDemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/qiupeng/QP/iOS/SwiftUIDemo/SwiftUIDemo/SwiftUIDemo/StateView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "154">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

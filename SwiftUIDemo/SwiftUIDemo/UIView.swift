@@ -34,6 +34,11 @@ struct UIView: View {
     var body: some View {
         NavigationView {
             Form {
+                Section.init(header: Text("Life Cycle")) {
+                    Text("Life Cycle").push {
+                        LifeCycleView().navigationBarTitle("Life Cycle")
+                    }
+                }
                 Section.init(header: Text("Framework Integration")) {
                     Text("UIViewRepresentable").push {
                         FrameworkView().navigationBarTitle("Framework Integration")

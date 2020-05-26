@@ -9,10 +9,17 @@
 import SwiftUI
 import MapKit
 
+class MapCoordinator {}
 
 struct MyMapView: UIViewRepresentable {
     
+    func makeCoordinator() -> MapCoordinator {
+        return MapCoordinator.init()
+    }
+    
     typealias UIViewType = MKMapView
+    
+    typealias Coordinator = MapCoordinator
         
     func makeUIView(context: UIViewRepresentableContext<MyMapView>) -> MKMapView {
         return MKMapView()
@@ -22,19 +29,16 @@ struct MyMapView: UIViewRepresentable {
         
     }
 }
-/// 事件代理
-class MyCoordiantor {}
 
 struct MyLoading: UIViewRepresentable {
+    class MyCoordiantor {} /// 事件代理
     
     typealias Coordinator = MyCoordiantor
     
     var show: Bool
     
     func makeUIView(context: UIViewRepresentableContext<MyLoading>) -> UIActivityIndicatorView {
-        let v = UIActivityIndicatorView()
-        v.style = .large
-        return v
+        return UIActivityIndicatorView()
     }
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<MyLoading>) {
@@ -43,7 +47,6 @@ struct MyLoading: UIViewRepresentable {
         } else {
             uiView.stopAnimating()
         }
-        print(context.coordinator)
     }
     
     func makeCoordinator() -> MyCoordiantor {
@@ -131,19 +134,20 @@ struct FrameworkView: View {
     var showImg: Image?
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             showImg?.resizable().scaledToFit()
             Text(text)
-            MyMapView()
-            Button.init("Change") {
+            //MyMapView()
+            Button.init(show ? "hide" : "show") {
                 self.text += " x "
                 self.show.toggle()
-                self.showPicker.toggle()
+                //self.showPicker.toggle()
             }
-            
-        }.overlay(MyLoading.init(show: show)).sheet(isPresented: $show, onDismiss: loadImage) {
-            MyImagePicker.init(selectImg: self.$selectImg)
         }
+        .overlay(MyLoading.init(show: show))
+//        .sheet(isPresented: $show, onDismiss: loadImage) {
+//            MyImagePicker.init(selectImg: self.$selectImg)
+//        }
     }
     
     func loadImage() {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D40E10D245AB52D00945956 /* LifeCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E10C245AB52D00945956 /* LifeCycleView.swift */; };
 		1DEBC8882458243C00EE2395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC8872458243C00EE2395 /* AppDelegate.swift */; };
 		1DEBC88A2458243C00EE2395 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC8892458243C00EE2395 /* SceneDelegate.swift */; };
 		1DEBC88C2458243C00EE2395 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC88B2458243C00EE2395 /* ContentView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D40E10C245AB52D00945956 /* LifeCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleView.swift; sourceTree = "<group>"; };
 		1DEBC8842458243C00EE2395 /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBC8872458243C00EE2395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1DEBC8892458243C00EE2395 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				1DEBC8A92458245300EE2395 /* LayoutView.swift */,
 				1DEBC8AA2458245300EE2395 /* ListScrollView.swift */,
 				1DEBC8AB2458245300EE2395 /* ButtonView.swift */,
+				1D40E10C245AB52D00945956 /* LifeCycleView.swift */,
 			);
 			path = ViewDemo;
 			sourceTree = "<group>";
@@ -219,6 +222,7 @@
 				1DEBC8B12458245400EE2395 /* ShapeView.swift in Sources */,
 				1DEBC8B02458245400EE2395 /* ValueSelectorView.swift in Sources */,
 				1DEBC8B22458245400EE2395 /* StacksView.swift in Sources */,
+				1D40E10D245AB52D00945956 /* LifeCycleView.swift in Sources */,
 				1DEBC8882458243C00EE2395 /* AppDelegate.swift in Sources */,
 				1DEBC88A2458243C00EE2395 /* SceneDelegate.swift in Sources */,
 				1DEBC8B52458245400EE2395 /* FrameworkView.swift in Sources */,
