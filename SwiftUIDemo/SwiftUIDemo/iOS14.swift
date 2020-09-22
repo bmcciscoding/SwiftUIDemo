@@ -14,29 +14,29 @@ struct iOS14: View {
             Form {
                 Section.init(header: Text("Essentials")) {
                     Text("App Structure and Behavior").push {
-                        TextViews().navigationBarTitle("Text")
+                        ViewAndControls().navigationBarTitle("Text")
                     }
                 }
                 Section.init(header: Text("User Interface")) {
                     Text("Views and Controls").push {
-                        TextViews().navigationBarTitle("Views and Controls")
+                        ViewAndControls().navigationBarTitle("Views and Controls")
                     }
                     Text("View Layout and Presentation").push {
-                        TextViews().navigationBarTitle("View Layout and Presentation")
+                        ViewAndControls().navigationBarTitle("View Layout and Presentation")
                     }
                     Text("Drawing and Animation").push {
-                        TextViews().navigationBarTitle("Drawing and Animation")
+                        ViewAndControls().navigationBarTitle("Drawing and Animation")
                     }
                     Text("Framework Integration").push {
-                        TextViews().navigationBarTitle("Framework Integration")
+                        ViewAndControls().navigationBarTitle("Framework Integration")
                     }
                 }
                 Section.init(header: Text("Data and Events")) {
                     Text("State and Data Flow").push {
-                        TextViews().navigationBarTitle("State and Data Flow")
+                        ViewAndControls().navigationBarTitle("State and Data Flow")
                     }
                     Text("Gestures").push {
-                        TextViews().navigationBarTitle("Gestures")
+                        ViewAndControls().navigationBarTitle("Gestures")
                     }
                 }
             }.navigationBarTitle("SwiftUI", displayMode: .inline)
