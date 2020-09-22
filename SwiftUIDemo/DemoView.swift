@@ -11,6 +11,9 @@ import SwiftUI
 struct DemoView: View {
     var body: some View {
         TabView {
+            iOS14().tabItem {
+                Text("SwiftUI")
+            }
             UIView().tabItem {
                 Text("UI")
             }

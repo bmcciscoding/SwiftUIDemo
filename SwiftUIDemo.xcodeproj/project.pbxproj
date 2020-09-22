@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D134B742519D7130091FB7B /* TextViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D134B732519D7130091FB7B /* TextViews.swift */; };
+		1D134B782519E7C90091FB7B /* iOS14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D134B772519E7C90091FB7B /* iOS14.swift */; };
 		1D40E10D245AB52D00945956 /* LifeCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E10C245AB52D00945956 /* LifeCycleView.swift */; };
 		1DEBC8882458243C00EE2395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC8872458243C00EE2395 /* AppDelegate.swift */; };
 		1DEBC88A2458243C00EE2395 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC8892458243C00EE2395 /* SceneDelegate.swift */; };
@@ -32,6 +34,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D134B732519D7130091FB7B /* TextViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViews.swift; sourceTree = "<group>"; };
+		1D134B772519E7C90091FB7B /* iOS14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS14.swift; sourceTree = "<group>"; };
 		1D40E10C245AB52D00945956 /* LifeCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleView.swift; sourceTree = "<group>"; };
 		1DEBC8842458243C00EE2395 /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBC8872458243C00EE2395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +73,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D134B6D2519D6BA0091FB7B /* Views&Controls */ = {
+			isa = PBXGroup;
+			children = (
+				1D134B732519D7130091FB7B /* TextViews.swift */,
+			);
+			path = "Views&Controls";
+			sourceTree = "<group>";
+		};
 		1DEBC87B2458243C00EE2395 = {
 			isa = PBXGroup;
 			children = (
@@ -91,9 +103,11 @@
 				1DEBC8872458243C00EE2395 /* AppDelegate.swift */,
 				1DEBC8892458243C00EE2395 /* SceneDelegate.swift */,
 				1DEBC88B2458243C00EE2395 /* ContentView.swift */,
+				1DEBC89D2458245300EE2395 /* DemoView.swift */,
 				1DEBC88D2458243E00EE2395 /* Assets.xcassets */,
 				1DEBC8922458243E00EE2395 /* LaunchScreen.storyboard */,
 				1DEBC8952458243E00EE2395 /* Info.plist */,
+				1D134B6D2519D6BA0091FB7B /* Views&Controls */,
 				1DEBC89B2458245300EE2395 /* SwiftUIDemo */,
 				1DEBC88F2458243E00EE2395 /* Preview Content */,
 			);
@@ -112,7 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				1DEBC89C2458245300EE2395 /* UIView.swift */,
-				1DEBC89D2458245300EE2395 /* DemoView.swift */,
+				1D134B772519E7C90091FB7B /* iOS14.swift */,
 				1DEBC89E2458245300EE2395 /* StateView.swift */,
 				1DEBC89F2458245300EE2395 /* ObservedObjectView.swift */,
 				1DEBC8A02458245300EE2395 /* ViewDemo */,
@@ -220,9 +234,11 @@
 				1DEBC8AF2458245400EE2395 /* ObservedObjectView.swift in Sources */,
 				1DEBC8BA2458245400EE2395 /* ButtonView.swift in Sources */,
 				1DEBC8B12458245400EE2395 /* ShapeView.swift in Sources */,
+				1D134B782519E7C90091FB7B /* iOS14.swift in Sources */,
 				1DEBC8B02458245400EE2395 /* ValueSelectorView.swift in Sources */,
 				1DEBC8B22458245400EE2395 /* StacksView.swift in Sources */,
 				1D40E10D245AB52D00945956 /* LifeCycleView.swift in Sources */,
+				1D134B742519D7130091FB7B /* TextViews.swift in Sources */,
 				1DEBC8882458243C00EE2395 /* AppDelegate.swift in Sources */,
 				1DEBC88A2458243C00EE2395 /* SceneDelegate.swift in Sources */,
 				1DEBC8B52458245400EE2395 /* FrameworkView.swift in Sources */,
@@ -368,6 +384,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +404,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftUIDemo/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = SwiftUIDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
