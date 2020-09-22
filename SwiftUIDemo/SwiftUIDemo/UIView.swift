@@ -95,6 +95,6 @@ struct UIView: View {
 
 struct UIView_Previews: PreviewProvider {
     static var previews: some View {
-        UIView()
+        UIView().environmentObject(UserInfo.shared)
     }
 }

@@ -90,6 +90,8 @@ struct StateView_Previews: PreviewProvider {
 class UserInfo: ObservableObject {
     @Published
     var name = "zhangsan"
+    
+    static let shared = UserInfo.init()
 }
 
 struct UserInfoView: View {
