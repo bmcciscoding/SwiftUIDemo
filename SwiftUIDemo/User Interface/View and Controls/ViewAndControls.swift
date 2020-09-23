@@ -25,6 +25,28 @@ struct ViewAndControls: View {
     @State
     var showToggleTitle = false
     
+    enum PickerValues: String, CaseIterable, Identifiable {
+        case one
+        case two
+        case three
+        
+        var id: String { self.rawValue }
+    }
+    @State
+    var pickerValues = PickerValues.one
+    
+    @State
+    var date = Date()
+    
+    @State
+    var sliderValue = 50.0
+    
+    @State
+    var stepperValue = 1
+    
+    @State
+    var colorValue = Color.red
+    
     var body: some View {
         Form {
             
@@ -59,7 +81,24 @@ struct ViewAndControls: View {
                 }
             }
             Section.init(header: Text("Value Selectors")) {
-                Toggle.init(self.showToggleTitle ? "Show" : "hide", isOn: $showToggleTitle).toggleStyle(SwitchToggleStyle())
+                Toggle.init(self.showToggleTitle ? "Show" : "Hide", isOn: $showToggleTitle).toggleStyle(SwitchToggleStyle())
+                Picker.init("Picker", selection: $pickerValues) {
+//                    Text("One").tag(PickerValues.one)
+//                    Text("Two").tag(PickerValues.two)
+//                    Text("Three").tag(PickerValues.three)
+                    
+                    ForEach(PickerValues.allCases) { v in
+                        Text(v.rawValue).tag(v)
+                    }
+                }
+                DatePicker.init("Date", selection: $date)
+                Slider.init(value: $sliderValue, in: 0...100, step: 1, onEditingChanged: { (ok) in
+                    print(ok)
+                }, minimumValueLabel: Text("0"), maximumValueLabel: Text("100")) {
+                    Text("\(self.sliderValue)")
+                }
+                Stepper.init("Stepper \(self.stepperValue)", value: $stepperValue)
+                ColorPicker.init("Color \(self.colorValue.description)", selection: $colorValue)
             }
         }
     }
