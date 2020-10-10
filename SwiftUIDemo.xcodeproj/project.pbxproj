@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1D134B742519D7130091FB7B /* ViewAndControls.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D134B732519D7130091FB7B /* ViewAndControls.swift */; };
 		1D134B782519E7C90091FB7B /* iOS14.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D134B772519E7C90091FB7B /* iOS14.swift */; };
+		1D3A6A0225318BBF004F1A99 /* CombineDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A6A0125318BBF004F1A99 /* CombineDemo.swift */; };
+		1D3A6A0625318BDB004F1A99 /* CombineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A6A0525318BDB004F1A99 /* CombineView.swift */; };
+		1D3A6A0A25318E9A004F1A99 /* CombineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D3A6A0925318E9A004F1A99 /* CombineViewController.swift */; };
 		1D40E10D245AB52D00945956 /* LifeCycleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D40E10C245AB52D00945956 /* LifeCycleView.swift */; };
 		1DEBC8882458243C00EE2395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC8872458243C00EE2395 /* AppDelegate.swift */; };
 		1DEBC88A2458243C00EE2395 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBC8892458243C00EE2395 /* SceneDelegate.swift */; };
@@ -67,6 +70,9 @@
 /* Begin PBXFileReference section */
 		1D134B732519D7130091FB7B /* ViewAndControls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewAndControls.swift; sourceTree = "<group>"; };
 		1D134B772519E7C90091FB7B /* iOS14.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iOS14.swift; sourceTree = "<group>"; };
+		1D3A6A0125318BBF004F1A99 /* CombineDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineDemo.swift; sourceTree = "<group>"; };
+		1D3A6A0525318BDB004F1A99 /* CombineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineView.swift; sourceTree = "<group>"; };
+		1D3A6A0925318E9A004F1A99 /* CombineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombineViewController.swift; sourceTree = "<group>"; };
 		1D40E10C245AB52D00945956 /* LifeCycleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCycleView.swift; sourceTree = "<group>"; };
 		1DEBC8842458243C00EE2395 /* SwiftUIDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DEBC8872458243C00EE2395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -136,9 +142,20 @@
 			path = "View and Controls";
 			sourceTree = "<group>";
 		};
+		1D3A69FE25318BAA004F1A99 /* CombineDemo */ = {
+			isa = PBXGroup;
+			children = (
+				1D3A6A0125318BBF004F1A99 /* CombineDemo.swift */,
+				1D3A6A0525318BDB004F1A99 /* CombineView.swift */,
+				1D3A6A0925318E9A004F1A99 /* CombineViewController.swift */,
+			);
+			path = CombineDemo;
+			sourceTree = "<group>";
+		};
 		1DEBC87B2458243C00EE2395 = {
 			isa = PBXGroup;
 			children = (
+				1D3A69FE25318BAA004F1A99 /* CombineDemo */,
 				1DEBC8862458243C00EE2395 /* SwiftUIDemo */,
 				1DEE4B42251B1B0D004750CB /* SwiftUIWidgetDemo */,
 				1DEE4B3D251B1B0D004750CB /* Frameworks */,
@@ -335,12 +352,14 @@
 			files = (
 				1DEBC8B92458245400EE2395 /* ListScrollView.swift in Sources */,
 				1DEE4B4A251B1B11004750CB /* SwiftUIWidgetDemo.intentdefinition in Sources */,
+				1D3A6A0A25318E9A004F1A99 /* CombineViewController.swift in Sources */,
 				1DEBC8B72458245400EE2395 /* ImageView.swift in Sources */,
 				1DEBC8AE2458245400EE2395 /* StateView.swift in Sources */,
 				1DEBC8B42458245400EE2395 /* FieldView.swift in Sources */,
 				1DEBC8AC2458245400EE2395 /* UIView.swift in Sources */,
 				1DEBC8B82458245400EE2395 /* LayoutView.swift in Sources */,
 				1DEBC8B62458245400EE2395 /* TextView.swift in Sources */,
+				1D3A6A0225318BBF004F1A99 /* CombineDemo.swift in Sources */,
 				1DEBC8AF2458245400EE2395 /* ObservedObjectView.swift in Sources */,
 				1DEBC8BA2458245400EE2395 /* ButtonView.swift in Sources */,
 				1DEBC8B12458245400EE2395 /* ShapeView.swift in Sources */,
@@ -352,6 +371,7 @@
 				1DEBC8882458243C00EE2395 /* AppDelegate.swift in Sources */,
 				1DEBC88A2458243C00EE2395 /* SceneDelegate.swift in Sources */,
 				1DEBC8B52458245400EE2395 /* FrameworkView.swift in Sources */,
+				1D3A6A0625318BDB004F1A99 /* CombineView.swift in Sources */,
 				1DEBC8B32458245400EE2395 /* AnimationView.swift in Sources */,
 				1DEBC8AD2458245400EE2395 /* DemoView.swift in Sources */,
 				1DEBC88C2458243C00EE2395 /* ContentView.swift in Sources */,
