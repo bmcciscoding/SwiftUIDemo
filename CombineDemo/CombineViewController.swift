@@ -8,6 +8,17 @@
 
 import UIKit
 import Combine
+import Foundation
+
+
+class CombineViewModel2 {
+
+    lazy var login = PassthroughSubject<Bool, Never>()
+
+
+
+}
+
 
 class CombineViewController: UIViewController {
 
@@ -18,10 +29,8 @@ class CombineViewController: UIViewController {
 
         // Do any additional setup after loading the view.
 
-        let pub = NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)
-        pub.sink(receiveCompletion: { print($0) }, receiveValue: { print($0)})
 
-
+        
 
     }
     

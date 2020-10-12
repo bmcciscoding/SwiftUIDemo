@@ -28,7 +28,7 @@ struct iOS14: View {
                         ViewAndControls().navigationBarTitle("Drawing and Animation")
                     }
                     Text("Framework Integration").push {
-                        ViewAndControls().navigationBarTitle("Framework Integration")
+                        FrameworkView().navigationBarTitle("Framework Integration")
                     }
                 }
                 Section.init(header: Text("Data and Events")) {
@@ -37,6 +37,11 @@ struct iOS14: View {
                     }
                     Text("Gestures").push {
                         ViewAndControls().navigationBarTitle("Gestures")
+                    }
+                }
+                Section.init(header: Text("Combine")) {
+                    Text("Publisher").push {
+                        CombineView().navigationBarTitle("State and Data Flow")
                     }
                 }
             }.navigationBarTitle("SwiftUI", displayMode: .inline)
