@@ -86,7 +86,20 @@ func testJust() {
 func learnDeferred() {
 
     let pub = Deferred.init {
-        return Just(3)
+        return Just(Int.random(in: (1...100)))
+        //return Just(Int(Date().timeIntervalSince1970))
+    }
+
+    _ = pub.sink { (complete) in
+        print(complete)
+    } receiveValue: { (value) in
+        print(value)
+    }
+
+    _ = pub.sink { (complete) in
+        print(complete)
+    } receiveValue: { (value) in
+        print(value)
     }
 
     _ = pub.sink { (complete) in
