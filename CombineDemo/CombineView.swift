@@ -64,7 +64,7 @@ func testCustom() {
 
 func testJust() {
 
-    let pub = (1...5).publisher
+    let pub = Just(Date().timeIntervalSince1970)
 
     _ = pub.sink { (complete) in
         print(complete)
@@ -72,7 +72,7 @@ func testJust() {
         print("sub \(value)")
     }
 
-    let sink = Subscribers.Sink<Int, Never>.init { (complete) in
+    let sink = Subscribers.Sink<Double, Never>.init { (complete) in
         print(complete)
     } receiveValue: { (value) in
         print("sink \(value)")
@@ -84,10 +84,8 @@ func testJust() {
 }
 
 func learnDeferred() {
-
     let pub = Deferred.init {
-        return Just(Int.random(in: (1...100)))
-        //return Just(Int(Date().timeIntervalSince1970))
+        return Just(Date().timeIntervalSince1970)
     }
 
     _ = pub.sink { (complete) in
@@ -111,12 +109,8 @@ func learnDeferred() {
 
 func testShare() {
     let future = Future<Int, Error>.init { (promise) in
-        //promise(.success(3))
-        let date = Date()
-        let ts = date.timeIntervalSince1970
-        promise(.success(Int(ts)))
-        promise(.failure(TestError.unknow))
-    }
+        promise(.success(3))
+    }.share()
 
     _ = future.sink { (complete) in
         print(complete)
@@ -138,22 +132,86 @@ func testShare() {
 
 }
 
+func learnSequence() {
+    let pub = (1...3).publisher
+    sub3times(pub: pub.eraseToAnyPublisher())
+}
+
+func learnRecord() {
+    let pub = Record<Int, Never>.init(output: [1, 2, 3], completion: .finished)
+    sub3times(pub: pub.eraseToAnyPublisher())
+}
+
+func sub3times<T>(pub: AnyPublisher<T, Never>) {
+    _ = pub.sink { (complete) in
+        print(complete)
+    } receiveValue: { (value) in
+        print(value)
+    }
+
+    _ = pub.sink { (complete) in
+        print(complete)
+    } receiveValue: { (value) in
+        print(value)
+    }
+
+    _ = pub.sink { (complete) in
+        print(complete)
+    } receiveValue: { (value) in
+        print(value)
+    }
+}
+
+func learnConnectablePublisher() {
+
+}
+
 struct CombineView: View {
 
     var body: some View {
-        VStack {
-            Text("Just").onTapGesture {
-                testJust()
+        Form {
+            Section.init(header: Text("Publisher")) {
+                Text("Just").onTapGesture {
+                    testJust()
+                }
+                Text("Share").onTapGesture {
+                    testShare()
+                }
+                Text("Deferred").onTapGesture {
+                    learnDeferred()
+                }
+                Text("Sequence").onTapGesture {
+                    learnSequence()
+                }
+                Text("Record").onTapGesture {
+                    learnRecord()
+                }
+                Text("ConnectablePublisher").onTapGesture {
+                    learnConnectablePublisher()
+                }
             }
-            Text("Share").onTapGesture {
-                testShare()
+            Section.init(header: Text("Subscriber")) {
+                Text("Just").onTapGesture {
+                    testJust()
+                }
+                Text("Share").onTapGesture {
+                    testShare()
+                }
+                Text("Deferred").onTapGesture {
+                    learnDeferred()
+                }
+                Text("learnSequence").onTapGesture {
+                    learnSequence()
+                }
+                Text("learnRecord").onTapGesture {
+                    learnRecord()
+                }
             }
-            Text("Deferred").onTapGesture {
-                learnDeferred()
-            }
-            Text("Cusom").onTapGesture {
-                testCustom()
-            }
+
+//            Text("Cusom").onTapGesture {
+//                testCustom()
+//            }
+
         }
     }
 }
