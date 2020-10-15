@@ -168,10 +168,7 @@ func learnConnectablePublisher() {
 
 struct CombineView: View {
 
-    let connectPub = Just(1).share().makeConnectable()
-
-    var sink1: AnyCancellable?
-    var sink2: AnySubscriber<Int, Never>?
+    @State var curText = "xx"
 
     var body: some View {
         Form {
@@ -193,28 +190,11 @@ struct CombineView: View {
                 }
                 Text("ConnectablePublisher").onTapGesture {
                     let pub = Just(1).share().makeConnectable()
-
-                    let sub = pub.sink(receiveCompletion: { (complete) in
-                        print(complete)
-                    }, receiveValue: { (value) in
-                        print(value)
-                    })
-                    self.sink1 = sub
-
-                    //connectPub.connect()
-//                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//                        _ = connectPub.sink(receiveCompletion: { (complete) in
-//                            print(complete)
-//                        }, receiveValue: { (value) in
-//                            print(value)
-//                        })
-//
-//                    }
                 }
             }
             Section.init(header: Text("Subscriber")) {
-                Text("TODO").onTapGesture {
-
+                Text("\(curText)").onReceive(Just(3).delay(for: 3, scheduler: DispatchQueue.main)) { (output) in
+                    self.curText = "\(output)"
                 }
             }
 
