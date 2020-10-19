@@ -88,6 +88,11 @@ func performAsyncActionAsFuture() -> Future <Void, Never> {
 }
 ```
 
+# Subject
+
+## CurrentValueSubject
+## PassthroughSubject
+
 #### 实现一个 ViewModel
 
 #### 参考
