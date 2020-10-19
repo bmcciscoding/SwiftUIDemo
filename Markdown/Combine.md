@@ -91,6 +91,9 @@ func performAsyncActionAsFuture() -> Future <Void, Never> {
 # Subject
 
 ## CurrentValueSubject
+CurrentValueSubject 不像 `@Published` 那样会自动调用 objectWillChange，因此在和 SwiftUI 配合使用时，会很难受。
+但是直接使用 `@Published` 时，因此通常会定义 Failure，无法直接 assigne。因此需要使用  replaceError 操作服来解决这个问题。
+
 ## PassthroughSubject
 
 #### 实现一个 ViewModel
