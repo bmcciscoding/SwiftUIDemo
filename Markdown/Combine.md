@@ -62,7 +62,17 @@ Combine 给我们提供了以下Publisher:
 
 - ignoreOutput： 1 2 3 => finish
 
-谢谢
+**自定义 Operator**
+```swift
+extension Publisher where Output == JSON {
+    func toModel<T: Decodable>(type: T.Type) -> AnyPublisher<T, APIError> {
+        self.tryMap { try $0.rawData() }
+            .decode(type: T.self, decoder: JSONDecoder.unsplashDecoder)
+            .mapError { APIError.error($0)}
+            .eraseToAnyPublisher()
+    }
+}
+```
 
 #### 封装一个异步操作
 
