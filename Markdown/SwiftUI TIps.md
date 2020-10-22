@@ -18,3 +18,17 @@ struct RoundedEdge: ViewModifier {
 ```
 
 字体大小
+
+
+加载更多
+```swift
+// 在列表视图的 appear 里加上判断
+.onAppear {
+  vm.loadmore(current: img)
+}
+// 根据 item 位置判断
+func loadmore(current item: Model) {
+  if item != lists.last {
+    return
+}
+```
